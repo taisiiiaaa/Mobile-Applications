@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Registration Forms</string>
+    <string name="next">Next</string>
+    <string name="email">Enter your email</string>
+    <string name="password">Enter your password</string>
+    <string name="welcome">Welcome back</string>
+    <string name="signin">sign in to access your account</string>
+    <string name="forget">Forget password ?</string>
+    <string name="remember">Remember me</string>
+    <string name="newmember">New Member?</string>
+    <string name="register">Register now</string>
+
+
+    <string name="fullname">Full Name</string>
+    <string name="validemail">Valid email</string>
+    <string name="phone">Phone Number</string>
+    <string name="strong">Strong password</string>
+    <string name="start">Get Startede</string>
+    <string name="freeacc">by creating a free account.</string>
+    <string name="terms">By checking the box you agree to our Terms and Conditions.</string>
+    <string name="already">Already a member?</string>
+    <string name="login">Log in</string>
+</resources>
