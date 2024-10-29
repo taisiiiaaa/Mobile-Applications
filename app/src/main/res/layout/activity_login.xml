@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="507dp"
+        android:src="@drawable/img" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next_button"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="97dp"
+        android:background="@drawable/background_button"
+        android:drawableEnd="@drawable/arrow"
+        android:drawablePadding="11dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:paddingStart="125dp"
+        android:paddingEnd="100dp"
+        android:text="@string/next"
+        android:textAllCaps="false"
+
+        android:textColor="@color/white"
+
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <EditText
+        android:id="@+id/email_field"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="325dp"
+        android:background="@drawable/email_field"
+        android:drawableEnd="@drawable/mail"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/email"
+        android:paddingStart="22dp"
+        android:paddingEnd="18dp"
+        android:textColor="#7E7E7E"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <EditText
+        android:id="@+id/password_field"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/email_field"
+        android:drawableEnd="@drawable/lock"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/password"
+        android:paddingStart="22dp"
+        android:paddingEnd="18dp"
+        android:textColor="#7E7E7E"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcome_back"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="195dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/welcome"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field" />
+
+    <TextView
+        android:id="@+id/sign_in"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="225dp"
+        android:fontFamily="@font/montserrat_light"
+        android:text="@string/signin"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field" />
+
+    <TextView
+        android:id="@+id/forget"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="219dp"
+        android:layout_marginTop="467dp"
+        android:text="@string/forget"
+        android:textColor="#6C63FF"
+        android:textSize="9sp"
+        android:textStyle="normal"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field"
+        app:layout_constraintRight_toRightOf="@+id/email_field" />
+
+    <TextView
+        android:id="@+id/new_m"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="43dp"
+        android:layout_marginBottom="58dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="bottom"
+        android:text="@string/newmember"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field"
+        app:layout_constraintRight_toRightOf="@+id/email_field" />
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="144dp"
+        android:layout_marginBottom="58dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="bottom"
+        android:text="@string/register"
+        android:textColor="#6C63FF"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field"
+        app:layout_constraintRight_toRightOf="@+id/email_field" />
+
+    <CheckBox
+        android:id="@+id/checkbox_meat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="449dp"
+        android:text="@string/remember"
+        android:textSize="9sp"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

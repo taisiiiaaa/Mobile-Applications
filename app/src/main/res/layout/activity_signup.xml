@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="524dp"
+        android:src="@drawable/img" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/NextButton"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/background_button"
+        android:drawableEnd="@drawable/arrow"
+        android:drawablePadding="11dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:paddingStart="125dp"
+        android:paddingRight="100dp"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <EditText
+        android:id="@+id/name_field"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="270dp"
+        android:background="@drawable/email_field"
+        android:drawableEnd="@drawable/user"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/fullname"
+        android:paddingStart="22dp"
+        android:paddingEnd="18dp"
+        android:textColor="#7E7E7E"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/email_field"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="339dp"
+        android:background="@drawable/email_field"
+        android:drawableEnd="@drawable/mail"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/validemail"
+        android:paddingStart="22dp"
+        android:paddingEnd="18dp"
+        android:textColor="#7E7E7E"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/phone_field"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="408dp"
+        android:background="@drawable/email_field"
+        android:drawableEnd="@drawable/smartphone"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/phone"
+        android:paddingStart="22dp"
+        android:paddingEnd="18dp"
+        android:textColor="#7E7E7E"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/password_field"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="477dp"
+        android:background="@drawable/email_field"
+        android:drawableEnd="@drawable/lock"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/strong"
+        android:paddingStart="22dp"
+        android:paddingEnd="18dp"
+        android:textColor="#7E7E7E"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/get_started"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="165dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/start"
+        android:textColor="@color/black"
+        android:textSize="44sp"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field" />
+
+    <TextView
+        android:id="@+id/sign_in"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="220dp"
+        android:fontFamily="@font/montserrat_light"
+        android:text="@string/freeacc"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field" />
+
+    <TextView
+        android:id="@+id/member"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="53dp"
+        android:layout_marginBottom="41dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="bottom"
+        android:text="@string/already"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field"
+        app:layout_constraintRight_toRightOf="@+id/email_field" />
+
+    <TextView
+        android:id="@+id/log_in"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="187dp"
+        android:layout_marginBottom="41dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="bottom"
+        android:text="@string/login"
+        android:textColor="#6C63FF"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field"
+        app:layout_constraintRight_toRightOf="@+id/email_field" />
+
+    <CheckBox
+        android:id="@+id/checkbox_meat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="525dp"
+        android:text="@string/terms"
+        android:textSize="9sp"
+        app:layout_constraintLeft_toLeftOf="@+id/email_field"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
