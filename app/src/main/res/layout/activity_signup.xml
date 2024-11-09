@@ -66,7 +66,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="339dp"
         android:background="@drawable/email_field"
-        android:drawableEnd="@drawable/mail"
+        android:drawableEnd="@drawable/ic_mail"
         android:fontFamily="@font/montserrat_regular"
         android:hint="@string/validemail"
         android:paddingStart="22dp"
@@ -172,6 +172,7 @@
         android:layout_marginTop="525dp"
         android:text="@string/terms"
         android:textSize="9sp"
+        android:buttonTint=""
         app:layout_constraintLeft_toLeftOf="@+id/email_field"
         app:layout_constraintTop_toTopOf="parent" />
 
