@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/img_welcome"
+        android:id="@+id/img_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -65,22 +65,26 @@
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password_field"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox"
         android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="400dp"
-        android:background="@drawable/email_field"
-        android:drawableEnd="@drawable/lock"
-        android:fontFamily="@font/montserrat_regular"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="25dp"
         android:hint="@string/password"
-        android:paddingStart="22dp"
-        android:paddingEnd="18dp"
-        android:textColor="#7E7E7E"
-        android:textSize="14sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColorHint="7E7E7E"
+        app:boxBackgroundColor="#EEEEEE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_field">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/welcome_back"
@@ -103,7 +107,7 @@
         android:text="@string/signin"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@id/img_welcome"
+        app:layout_constraintBottom_toBottomOf="@id/img_login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -130,7 +134,7 @@
         android:text="@string/newmember"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="@id/register"
-        app:layout_constraintLeft_toLeftOf="@+id/email_field" />
+        app:layout_constraintLeft_toLeftOf="@+id/next_button" />
 
     <TextView
         android:id="@+id/register"
@@ -144,7 +148,7 @@
         android:textColor="#6C63FF"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="@+id/email_field" />
+        app:layout_constraintRight_toRightOf="@+id/next_button" />
 
     <CheckBox
         android:id="@+id/checkbox"
