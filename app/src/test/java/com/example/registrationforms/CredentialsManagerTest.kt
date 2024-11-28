@@ -1,5 +1,4 @@
-// Put your package name here. Check your activity for reference.
-package com.example.xyz
+package com.example.registrationforms
 
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
@@ -12,7 +11,7 @@ class CredentialsManagerTest {
     fun givenEmptyEmail_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
 
-        val isEmailValid = credentialsManager.isEmailValid("")
+        val isEmailValid = credentialsManager.isEmailEmpty("")
 
         assertEquals(false, isEmailValid)
     }
@@ -48,6 +47,14 @@ class CredentialsManagerTest {
     fun givenFilledPassword_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
 
-        assertEquals(true, credentialsManager.isPasswordEmpty("123"))
+        assertEquals(true, credentialsManager.isPasswordEmpty("1234"))
+    }
+
+    //Test too short password
+    @Test
+    fun givenShortPasswordReturnFalse() {
+        val credentialsManager = CredentialsManager()
+
+        assertEquals(false, credentialsManager.isPasswordLongEnough("432"))
     }
 }
