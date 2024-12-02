@@ -57,4 +57,6 @@ class CredentialsManagerTest {
 
         assertEquals(false, credentialsManager.isPasswordLongEnough("432"))
     }
+
+
 }
