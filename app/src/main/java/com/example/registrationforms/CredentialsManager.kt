@@ -10,6 +10,10 @@ class CredentialsManager {
             ")+"
             )
 
+    private val credentials = mutableMapOf<String, String>(
+        "test@te.st".lowercase() to "12345678"
+    )
+
     fun isEmailEmpty(email: String): Boolean {
         return email.isNotEmpty()
     }
@@ -24,5 +28,20 @@ class CredentialsManager {
 
     fun isPasswordLongEnough(password: String): Boolean {
         return password.length >= 8
+    }
+
+    fun register(email: String, password: String): String {
+        val normalizedEmail = email.lowercase()
+
+        return if (credentials.containsKey(normalizedEmail)) {
+            "Error: Email is already registered."
+        } else {
+            credentials[normalizedEmail] = password
+            "Registration successful."
+        }
+    }
+    //for tests
+    fun doesAccountExist(email: String): Boolean {
+        return credentials.containsKey(email.lowercase())
     }
 }

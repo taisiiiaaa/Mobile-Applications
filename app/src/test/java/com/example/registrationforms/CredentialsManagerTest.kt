@@ -57,4 +57,55 @@ class CredentialsManagerTest {
 
         assertEquals(false, credentialsManager.isPasswordLongEnough("432"))
     }
+
+    //test registration with valid email and password
+    @Test
+    fun givenValidEmailAndPassword_thenRegisterSuccessfully() {
+        val credentialsManager = CredentialsManager()
+        val result = credentialsManager.register("newuser@te.st", "password1234")
+        assertEquals("Registration successful.", result)
+    }
+
+    //test registration with already registered email
+    @Test
+    fun givenUsedEmail_thenReturnError() {
+        val credentialsManager = CredentialsManager()
+
+        credentialsManager.register("usedemail@test.test", "password1234")
+        val result = credentialsManager.register("usedemail@test.test", "1234password")
+        assertEquals("Error: Email is already registered.", result)
+    }
+
+    //test case insensitivity in registration
+    @Test
+    fun givenUsedEmailWithDifferentCase_thenReturnError() {
+        val credentialsManager = CredentialsManager()
+
+        credentialsManager.register("usedemail@test.test", "password1234")
+        val result = credentialsManager.register("USEDEMAIL@test.test", "1234password")
+
+        assertEquals("Error: Email is already registered.", result)
+    }
+
+    //test account existence check after registration
+    @Test
+    fun givenNewAccount_thenAccountExists() {
+        val credentialsManager = CredentialsManager()
+
+        credentialsManager.register("test@test.test", "password1234")
+        val accountExists = credentialsManager.doesAccountExist("test@test.test")
+
+        assertEquals(true, accountExists)
+    }
+
+    //test account existence with case insensitivity 
+    @Test
+    fun givenAccountWithDifferentCase_thenAccountExists() {
+        val credentialsManager = CredentialsManager()
+
+        credentialsManager.register("test@test.test", "password1234")
+        val accountExists = credentialsManager.doesAccountExist("TEST@test.test")
+
+        assertEquals(true, accountExists)
+    }
 }
