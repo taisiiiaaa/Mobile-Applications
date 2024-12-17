@@ -40,8 +40,13 @@ class CredentialsManager {
             "Registration successful."
         }
     }
-    //for tests
+
     fun doesAccountExist(email: String): Boolean {
         return credentials.containsKey(email.lowercase())
+    }
+
+    fun isPasswordCorrect(email: String, password: String): Boolean {
+        val normalizedEmail = email.lowercase()
+        return credentials[normalizedEmail] == password
     }
 }
