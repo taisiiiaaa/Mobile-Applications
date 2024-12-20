@@ -133,7 +133,7 @@
 
     <TextView
         android:id="@+id/get_started"
-        android:layout_width="256dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_medium"
         android:text="@string/start"
@@ -145,7 +145,7 @@
 
     <TextView
         android:id="@+id/by_creating"
-        android:layout_width="186dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="56dp"
         android:fontFamily="@font/montserrat_light"
