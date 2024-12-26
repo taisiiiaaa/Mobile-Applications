@@ -21,4 +21,24 @@
     <string name="login">Log in</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="recipe_image">Recipe image</string>
+
+    <string name="recipe_black_karaage">Black Karaage with Curry Bento</string>
+    <string name="recipe_seafood_udon">Seafood Udon</string>
+    <string name="recipe_tonkotsu_ramen">Tonkotsu Ramen</string>
+    <string name="recipe_takoyaki">Takoyaki</string>
+    <string name="recipe_tempura">Tempura</string>
+    <string name="recipe_yakitori_shrimp">Yakitori Shrimp</string>
+    <string name="recipe_onigiri_bento">Onigiri Bento</string>
+
+
+    <string name="desc_black_karaage">This Japanese modern izakaya dish features crispy black ka..</string>
+    <string name="desc_seafood_udon">A Japanese-style dish that’s quick and easy to prepare..</string>
+    <string name="desc_tonkotsu_ramen">Is a Japanese noodle soup dish that originated in Fuku..</string>
+    <string name="desc_takoyaki">Is a Japanese snack that originated in Osaka, Japan...</string>
+    <string name="desc_tempura">Is a popular Japanese dish that consists of seafood, vege..</string>
+    <string name="desc_yakitori_shrimp">Is a Japanese dish that consists of skewered and grill..</string>
+    <string name="desc_onigiri_bento">Japanese-style rice triangles with different fillings..</string>
+
 </resources>
