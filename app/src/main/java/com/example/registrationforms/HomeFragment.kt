@@ -14,7 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.textfield.TextInputEditText
+import androidx.appcompat.widget.SearchView
 import kotlinx.coroutines.launch
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
@@ -77,12 +77,19 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         viewModel.initializeRecipes(recipes)
 
-        val searchBar = view.findViewById<TextInputEditText>(R.id.search)
+        val searchView = view.findViewById<SearchView>(R.id.search)
 
-        searchBar.addTextChangedListener {
-            val query = it.toString()
-            viewModel.setQuery(query)
-        }
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                query?.let { viewModel.setQuery(it) }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                newText?.let { viewModel.setQuery(it) }
+                return true
+            }
+        })
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
