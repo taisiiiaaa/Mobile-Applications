@@ -9,10 +9,15 @@ import android.widget.Toast
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
-
-
+import com.google.android.material.textfield.TextInputEditText
+import kotlinx.coroutines.launch
+import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.viewModels
 
 data class Recipe(
     val imageId: Int,
@@ -20,8 +25,9 @@ data class Recipe(
     val recipeInfo: String
 )
 
-
 class HomeFragment : Fragment(R.layout.fragment_home) {
+
+    private val viewModel: RecipesViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -66,10 +72,28 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         val recipesRecyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
         recipesRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recipesRecyclerView.adapter = RecipeAdapter(recipes)
+        val adapter = RecipeAdapter(emptyList())
+        recipesRecyclerView.adapter = adapter
+
+        viewModel.initializeRecipes(recipes)
+
+        val searchBar = view.findViewById<TextInputEditText>(R.id.search)
+
+        searchBar.addTextChangedListener {
+            val query = it.toString()
+            viewModel.setQuery(query)
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.filteredRecipes.collect { filteredRecipes ->
+                    adapter.updateRecipes(filteredRecipes)
+                }
+            }
+        }
     }
 
-    class RecipeAdapter(private val recipes: List<Recipe>) :
+    class RecipeAdapter(private var recipes: List<Recipe>) :
         RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
 
         class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -78,6 +102,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             val recipeInfo: TextView = itemView.findViewById(R.id.recipe_description)
             val shareButton: Button = itemView.findViewById(R.id.share_button)
             val likeButton: Button = itemView.findViewById(R.id.favorite_button)
+        }
+
+        fun updateRecipes(newRecipes: List<Recipe>) {
+            recipes = newRecipes
+            notifyDataSetChanged()
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
